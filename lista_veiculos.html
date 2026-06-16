@@ -1,14 +1,17 @@
 <!doctype html>
+
 <html lang="pt-BR">
 
+
 <head>
+
 
 <meta charset="utf-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<title>Lista de Veículos</title>
+<title>Lista Veículos</title>
 
 
 <link 
@@ -19,10 +22,13 @@ rel="stylesheet">
 </head>
 
 
+
 <body>
 
 
+
 <nav class="navbar navbar-dark bg-dark">
+
 
 <div class="container-fluid">
 
@@ -32,12 +38,17 @@ rel="stylesheet">
 </a>
 
 
-<a href="cadastrar_veiculo.html"btn btn-outline-light">
+
+<a href="cadastrar_veiculo.html"
+class="btn btn-outline-light">
+
 Cadastrar veículo
+
 </a>
 
 
 </div>
+
 
 </nav>
 
@@ -51,6 +62,7 @@ Cadastrar veículo
 <h1>
 Veículos cadastrados
 </h1>
+
 
 
 
@@ -69,8 +81,8 @@ Veículos cadastrados
 
 </tr>
 
-</thead>
 
+</thead>
 
 
 <tbody id="lista">
@@ -79,8 +91,8 @@ Veículos cadastrados
 </tbody>
 
 
-
 </table>
+
 
 
 </div>
@@ -89,19 +101,16 @@ Veículos cadastrados
 
 
 
-
-
 <script>
-
-
-let veiculos =
-JSON.parse(localStorage.getItem("veiculos")) || [];
-
 
 
 let tabela =
 document.getElementById("lista");
 
+
+
+let veiculos =
+JSON.parse(localStorage.getItem("veiculos")) || [];
 
 
 
@@ -126,8 +135,8 @@ tabela.innerHTML += `
 
 </tr>
 
-`;
 
+`;
 
 
 });
@@ -138,7 +147,7 @@ tabela.innerHTML += `
 
 
 
-
 </body>
+
 
 </html>

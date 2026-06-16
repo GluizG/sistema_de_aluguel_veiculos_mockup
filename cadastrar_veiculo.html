@@ -12,184 +12,67 @@
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-
 </head>
 
 
 <body>
 
 
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
-
+<nav class="navbar navbar-dark bg-dark">
 
 <div class="container-fluid">
-
 
 <a class="navbar-brand" href="index.html">
 🚗 Luiz Carros
 </a>
 
 
-
-<ul class="navbar-nav">
-
-
-<li class="nav-item">
-<a class="nav-link" href="index.html">
-Home
-</a>
-</li>
-
-
-<li class="nav-item">
-<a class="nav-link" href="clientes.html">
-Clientes
-</a>
-</li>
-
-
-
-<li class="nav-item">
-<a class="nav-link active" href="veiculos.html">
-Veículos
-</a>
-</li>
-
-
-
-<li class="nav-item">
-<a class="nav-link" href="listar_veiculos.html">
+<a href="lista_veiculos.html" class="btn btn-outline-light">
 Lista Veículos
 </a>
-</li>
-
-
-
-</ul>
 
 
 </div>
 
-
 </nav>
-
-
-
-
 
 
 
 <div class="container mt-5">
 
 
-<h1>
-Cadastro de Veículo
-</h1>
-
+<h1>Cadastro de Veículo</h1>
 
 
 <form id="formVeiculo">
 
 
-
-<div class="mb-3">
-
-<label>
-Marca
-</label>
-
-<input 
-class="form-control"
-id="marca"
-required>
-
-</div>
+<label>Marca</label>
+<input id="marca" class="form-control" required>
 
 
+<label class="mt-3">Modelo</label>
+<input id="modelo" class="form-control" required>
 
 
-
-<div class="mb-3">
-
-<label>
-Modelo
-</label>
-
-<input 
-class="form-control"
-id="modelo"
-required>
-
-</div>
+<label class="mt-3">Ano</label>
+<input id="ano" type="number" class="form-control" required>
 
 
+<label class="mt-3">Placa</label>
+<input id="placa" class="form-control" required>
 
 
+<label class="mt-3">Preço</label>
+<input id="preco" type="number" class="form-control" required>
 
 
-<div class="mb-3">
-
-<label>
-Ano
-</label>
-
-<input 
-type="number"
-class="form-control"
-id="ano"
-required>
-
-</div>
-
-
-
-
-
-
-<div class="mb-3">
-
-<label>
-Placa
-</label>
-
-<input 
-class="form-control"
-id="placa"
-required>
-
-</div>
-
-
-
-
-
-
-<div class="mb-3">
-
-<label>
-Preço
-</label>
-
-<input 
-type="number"
-class="form-control"
-id="preco"
-required>
-
-</div>
-
-
-
-
+<br>
 
 
 <button class="btn btn-primary">
-
 Cadastrar veículo
-
 </button>
-
-
 
 
 </form>
@@ -200,60 +83,46 @@ Cadastrar veículo
 
 
 
-
 <script>
 
 
 document
 .getElementById("formVeiculo")
-.addEventListener("submit",function(e){
+.addEventListener("submit", function(e){
 
 
 e.preventDefault();
 
 
 
-let veiculos =
+let lista =
 JSON.parse(localStorage.getItem("veiculos")) || [];
 
 
 
-let veiculo = {
+let carro = {
 
+marca: document.getElementById("marca").value,
 
-marca:
-document.getElementById("marca").value,
+modelo: document.getElementById("modelo").value,
 
+ano: document.getElementById("ano").value,
 
-modelo:
-document.getElementById("modelo").value,
+placa: document.getElementById("placa").value,
 
-
-ano:
-document.getElementById("ano").value,
-
-
-placa:
-document.getElementById("placa").value,
-
-
-preco:
-document.getElementById("preco").value
-
-
+preco: document.getElementById("preco").value
 
 };
 
 
 
-
-veiculos.push(veiculo);
+lista.push(carro);
 
 
 
 localStorage.setItem(
 "veiculos",
-JSON.stringify(veiculos)
+JSON.stringify(lista)
 );
 
 
@@ -262,11 +131,7 @@ alert("Veículo cadastrado!");
 
 
 
-this.reset();
-
-
-
-window.location.href="lista-veiculos.html";
+window.location.href="lista_veiculos.html";
 
 
 
@@ -274,8 +139,6 @@ window.location.href="lista-veiculos.html";
 
 
 </script>
-
-
 
 
 </body>
